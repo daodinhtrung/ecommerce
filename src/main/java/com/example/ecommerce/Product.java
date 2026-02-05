@@ -1,0 +1,27 @@
+package com.example.ecommerce;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue; 
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+@Entity // Báo cho Spring biết đây là một bảng trong DB
+@Data   // Lombok tự động tạo Getter, Setter, toString...
+@Table(name = "products")
+public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // ID tự tăng
+    private Long id;
+
+    private String name;
+    private Double price;
+    private String description;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id") // Tên cột khóa ngoại trong DB
+    private Category category;
+}
