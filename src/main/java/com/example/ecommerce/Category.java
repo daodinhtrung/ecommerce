@@ -21,7 +21,7 @@ public class Category {
     private String name;
 
     // Quan hệ 1-N: Một Category chứa list các Product
-    // "mappedBy" trỏ tới tên biến 'category' bên file Product (sắp sửa)
+    // "mappedBy" trỏ tới tên biến 'category' bên file Product 
     // @JsonIgnore để tránh lỗi vòng lặp vô tận khi chuyển sang JSON (Category -> Product -> Category...)
     @OneToMany(mappedBy = "category")
     private List<Product> products;

@@ -15,13 +15,10 @@ public class CategoryController {
     @Autowired
     private CategoryRepository categoryRepository;
 
-    // API tạo danh mục mới
     @PostMapping
     public Category createCategory(@RequestBody Category category) {
         return categoryRepository.save(category);
     }
-
-    // API lấy tất cả danh mục
     @GetMapping
     public List<Category> getAllCategories() {
         return categoryRepository.findAll();

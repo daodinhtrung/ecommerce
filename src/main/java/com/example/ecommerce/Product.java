@@ -14,7 +14,7 @@ import lombok.Data;
 @Table(name = "products")
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // ID tự tăng
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private Long id;
 
     private String name;
@@ -22,6 +22,6 @@ public class Product {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "category_id") // Tên cột khóa ngoại trong DB
+    @JoinColumn(name = "category_id") 
     private Category category;
 }
