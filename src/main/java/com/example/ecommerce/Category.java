@@ -1,17 +1,15 @@
 package com.example.ecommerce;
 
+import jakarta.persistence.*;
+import lombok.Data; // Hoặc dùng @Getter, @Setter nếu không muốn dùng @Data
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.List;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
-import lombok.Data;
-
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "categories")
 public class Category {
     @Id
@@ -19,10 +17,9 @@ public class Category {
     private Long id;
 
     private String name;
+    private String description;
 
-    // Quan hệ 1-N: Một Category chứa list các Product
-    // "mappedBy" trỏ tới tên biến 'category' bên file Product 
-    // @JsonIgnore để tránh lỗi vòng lặp vô tận khi chuyển sang JSON (Category -> Product -> Category...)
     @OneToMany(mappedBy = "category")
+    @JsonIgnore 
     private List<Product> products;
 }
