@@ -1,4 +1,4 @@
-package com.example.ecommerce;
+package com.example.ecommerce.controller;
 
 import java.util.List;
 
@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.ecommerce.Category;
+import com.example.ecommerce.repository.CategoryRepository;
 
 @RestController
 @RequestMapping("/api/categories")

@@ -1,6 +1,7 @@
-package com.example.ecommerce;
-import lombok.Data;
+package com.example.ecommerce.repository;
 import java.util.List;
+
+import lombok.Data;
 
 @Data
 public class OrderDTO {

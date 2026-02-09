@@ -1,9 +1,17 @@
-package com.example.ecommerce;
+package com.example.ecommerce.service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.ArrayList;
-import java.util.List;
+
+import com.example.ecommerce.Order;
+import com.example.ecommerce.OrderItem;
+import com.example.ecommerce.Product;
+import com.example.ecommerce.repository.OrderDTO;
+import com.example.ecommerce.repository.OrderRepository;
+import com.example.ecommerce.repository.ProductRepository;
 
 @Service // Đánh dấu đây là nơi xử lý nghiệp vụ
 public class OrderService {
